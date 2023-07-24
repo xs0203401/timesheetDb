@@ -1,0 +1,17 @@
+spring:
+  Jackson:
+    default-property-inclusion: non_null
+    property-naming-strategy: SNAKE_CASE
+  datasource:
+    url: jdbc:mysql://${DATABASE_URL:localhost}:3206/timesheetDb
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:my_secret}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+logging:
+  level:
+    org.apache.coyote.http11.Http11InputBuffer: DEBUG # Incoming HTTP Requests
+    org.springframework.jdbc.core: DEBUG # SQL

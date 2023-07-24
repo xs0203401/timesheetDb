@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mysql:
+      container_name: mydb
+      image: mysql:latest
+      ports:
+        - "3206:3306"
+      environment:
+        MYSQL_DATABASE: timesheetDb
+        MYSQL_USER: user
+        MYSQL_PASSWORD: test
+        MYSQL_ROOT_PASSWORD: my_secret
+      volumes:
+        - timesheetDemo-mysql-local:/var/lib/mysql
+volumes:
+  timesheetDemo-mysql-local:
